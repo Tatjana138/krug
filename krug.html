@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Animation-circle</title>
+        <style>
+            body {
+                background-color: #050210;
+                margin: 0;
+                padding: 0;
+                height: 900px;
+            }
+            .circle {
+                height: 400px;
+                width: 400px;
+                border-radius: 50%;
+                background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+                position: relative;
+                margin: 0 auto;
+                top: 250px;
+                animation: animation 2s linear infinite;
+               }
+            .circle div {
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+                background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+                position: absolute;
+                animation: animation 2s linear infinite;
+            }
+             @keyframes animation {
+                0% { transform: rotate(0deg);
+                }                
+                100% {transform: rotate(360deg);
+                }
+            }
+            .circle div:nth-child(1) {
+                filter: blur(10px);
+            }
+            .circle div:nth-child(2) {
+                filter: blur(20px);
+            }
+            .circle div:nth-child(3) {
+                filter: blur(30px);
+            }
+            .circle div:nth-child(4) {
+                filter: blur(40px);
+            }
+            .circle:after {
+                content: '';
+                position: absolute;
+                top: 20px;
+                bottom: 20px;
+                right: 20px;
+                left: 20px;
+                background-color: #050210;
+                border-radius: 50%;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <div class="circle">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </body>
+</html>
